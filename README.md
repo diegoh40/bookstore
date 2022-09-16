@@ -62,7 +62,6 @@ For educational purpose only, use it as a guideline.
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
 Feel free to check the [issues page](../../issues/).
 
 ## Show your support
