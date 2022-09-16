@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable react/prefer-stateless-function */
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Categories from './pages/Categories';
+import Books from './pages/Books';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="cont">
+        <div className="nav">
+          <h1>Bookstore CMS</h1>
+          <Navbar />
+        </div>
+        <Switch>
+          <Route exact path="/Categories">
+            <Categories />
+          </Route>
+          <Route exact path="/">
+            <Books />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
