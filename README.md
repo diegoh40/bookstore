@@ -15,6 +15,7 @@ By building this application, you will learn how to use React and Redux.
 - CSS
 - Git Workflow, Git, GitHub
 
+
 ## Live Demo (if available)
 [Live Demo Link]()
 ## Getting Started
