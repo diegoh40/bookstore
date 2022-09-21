@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Book = (props) => {
-  const { title } = props;
-  const { author } = props;
-  return (
+const Book = ({ title, author }) => // props
+/*  const { title } = props;
+  const { author } = props; */
+  (
     <div>
       <h2> Romantic</h2>
       <p>
@@ -17,6 +17,4 @@ const Book = (props) => {
       <button type="button">Remove</button>
     </div>
   );
-};
-
 export default Book;
