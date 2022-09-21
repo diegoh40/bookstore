@@ -1,22 +1,26 @@
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
+const ADD_BOOK = 'redux/book/ADD_BOOK';
+const REMOVE_BOOK = 'redux/book/REMOVE_BOOK';
 
-export const addBook = (newBook) => ({
+export const addBook = (newbook) => ({
   type: ADD_BOOK,
-  book: newBook,
+  newbook,
 });
 
-export const removeBook = () => ({
+export const removeBook = (id) => ({
   type: REMOVE_BOOK,
+  id,
 });
 
 export default function booksReducer(state = [], action) {
   switch (action.type) {
     case ADD_BOOK:
-      return state.push(action.book);
+      return [
+        ...state,
+        action.newbook,
+      ];
 
     case REMOVE_BOOK:
-      return state.pop();
+      return [...state.filter((el) => el.id === action.id)];
 
     default:
       return state;

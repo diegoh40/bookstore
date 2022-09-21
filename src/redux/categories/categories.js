@@ -1,4 +1,4 @@
-const CHECKING_STATUS = 'CHECKING_STATUS';
+const CHECKING_STATUS = '/reduxbook/CHECKING_STATUS';
 
 export const checkStatus = () => ({
   type: CHECKING_STATUS,
