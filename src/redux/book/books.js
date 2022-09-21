@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 const ADD_BOOK = 'redux/book/ADD_BOOK';
 const REMOVE_BOOK = 'redux/book/REMOVE_BOOK';
 
@@ -20,7 +21,8 @@ export default function booksReducer(state = [], action) {
       ];
 
     case REMOVE_BOOK:
-      return [...state.filter((el) => el.id === action.id)];
+      const newState = state.slice();
+      return newState.filter((el) => el !== newState[action.id]);
 
     default:
       return state;
