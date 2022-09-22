@@ -1,17 +1,35 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeBook } from '../redux/book/books';
 
-const Book = ({ title, author }) => (
-  <div>
-    <h2> Romantic</h2>
-    <p>
-      Title :
-      {title}
-    </p>
-    <p>
-      Author :
-      {author}
-    </p>
-    <button type="button">Remove</button>
-  </div>
-);
+const Book = () => {
+  const book = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+  /*  console.log(book[2].id); */
+  return (
+    <div>
+      <div>
+        {book.map((el) => (
+          <div>
+            <h4>
+              {el.title}
+            </h4>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                dispatch(removeBook(el.id));
+              }}
+            >
+              Remove
+
+            </button>
+          </div>
+        ))}
+
+      </div>
+    </div>
+  );
+};
 export default Book;
