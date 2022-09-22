@@ -1,10 +1,29 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { checkStatus } from '../redux/categories/categories';
 
-const Categories = () => (
-  <div>
-    <h2> Sorry!, page in construction</h2>
-    <p />
+const Categories = () => {
+  const message = useSelector((state) => state.categories);
+  const dispatch = useDispatch();
+  const buttonStatus = (
+    <button
+      type="button"
+      onClick={(e) => {
+        e.preventDefault();
+        dispatch(checkStatus());
+      }}
+    >
+      Status
 
-  </div>
-);
+    </button>
+  );
+  const nothing = <p>{message.msj}</p>;
+  return (
+
+    <div>
+      {message.msj !== '' ? nothing : buttonStatus}
+    </div>
+  );
+};
+
 export default Categories;
