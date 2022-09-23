@@ -1,21 +1,13 @@
 /* eslint-disable no-case-declarations */
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
-const ADD_BOOK = '../redux/book/ADD_BOOK';
-const REMOVE_BOOK = '../redux/book/REMOVE_BOOK';
+import { getApiBooks, addApiBooks, removeApiBook } from '../../api_bookstore';
 
-const initialState = [
-  {
-    title: '100 años de soledad',
-    author: 'Gabriel Garcia Márquez',
-    id: uuidv4(),
-  },
-  {
-    title: 'Metamorfosis',
-    author: 'Frank Kafka',
-    id: uuidv4(),
-  },
-];
+const ADD_BOOK = 'src/redux/book/ADD_BOOK';
+const REMOVE_BOOK = 'src/redux/book/REMOVE_BOOK';
+const UPDATE_BOOKS = 'src/redux/book/UPDATE_BOOKS';
+
+const initialState = [];
 
 export default function booksReducer(state = initialState, action) {
   switch (action.type) {
@@ -26,20 +18,35 @@ export default function booksReducer(state = initialState, action) {
       ];
 
     case REMOVE_BOOK:
-      const newState = state.slice();
-      return newState.filter((el) => el.id !== action.id);
+      return [...state.filter((el) => el.id !== action.id)];
 
+    case UPDATE_BOOKS:
+      return action.books;
     default:
       return state;
   }
 }
 
-export const addBooks = (newbook) => ({
-  type: ADD_BOOK,
-  newbook,
-});
+export const addBooks = (newbook) => async (dispatch) => {
+  addApiBooks(newbook);
+  dispatch({
+    type: ADD_BOOK,
+    newbook,
+  });
+};
 
-export const removeBook = (id) => ({
-  type: REMOVE_BOOK,
-  id,
-});
+export const removeBook = (id) => async (dispatch) => {
+  removeApiBook(id);
+  dispatch({
+    type: REMOVE_BOOK,
+    id,
+  });
+};
+
+export const updateBook = () => async (dispatch) => {
+  const books = await getApiBooks();
+  dispatch({
+    type: UPDATE_BOOKS,
+    books,
+  });
+};

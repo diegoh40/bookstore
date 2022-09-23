@@ -1,35 +1,41 @@
 /* eslint-disable react/jsx-key */
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { removeBook } from '../redux/book/books';
 
-const Book = () => {
-  const book = useSelector((state) => state.books);
+const Book = (props) => {
+  const {
+    id, title, author, category,
+  } = props;
   const dispatch = useDispatch();
-  /*  console.log(book[2].id); */
+  const handleDelete = () => {
+    dispatch(removeBook(id));
+  };
+
   return (
-    <div>
-      <div>
-        {book.map((el) => (
-          <div>
-            <h4>
-              {el.title}
-            </h4>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(removeBook(el.id));
-              }}
-            >
-              Remove
+    <li>
 
-            </button>
-          </div>
-        ))}
+      <p>{category}</p>
+      <p>{title}</p>
+      <p>{author}</p>
 
-      </div>
-    </div>
+      <button
+        type="button"
+        onClick={handleDelete}
+      >
+        Remove
+
+      </button>
+
+    </li>
+
   );
 };
+Book.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+};
+
 export default Book;
