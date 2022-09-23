@@ -8,6 +8,7 @@ const AddBook = () => {
 
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
 
   return (
     <form className="form-container">
@@ -28,19 +29,31 @@ const AddBook = () => {
         value={author}
         onInput={(e) => setAuthor(e.target.value)}
       />
+      <input
+        type="text"
+        className="input-text"
+        placeholder="Add category..."
+        name="category"
+        value={category}
+        onInput={(e) => setCategory(e.target.value)}
+      />
 
       <button
         type="submit"
         className="input-submit"
         onClick={(e) => {
           e.preventDefault();
-          dispatch(addBooks({
+          const newBook = {
+            id: uuidv4(),
             title,
             author,
-            id: uuidv4(),
-          }));
+            category,
+          };
+
+          dispatch(addBooks(newBook));
           setAuthor('');
           setTitle('');
+          setCategory('');
         }}
       >
         Submit
