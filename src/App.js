@@ -17,6 +17,7 @@ function App() {
             <h1>Bookstore CMS</h1>
             <Navbar />
           </div>
+          <hr />
           <Switch>
             <Route exact path="/Categories">
               <Categories />

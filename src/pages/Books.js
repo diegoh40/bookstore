@@ -15,13 +15,16 @@ const Books = () => {
 
   return (
 
-    <div>
-      <ul>
+    <div className="contUI">
+      <ul className="list">
         {books.map((el) => (
           <Book key={el.id} id={el.id} title={el.title} author={el.author} category={el.category} />
         ))}
       </ul>
-      <AddBook />
+      <hr />
+      <div>
+        <AddBook />
+      </div>
     </div>
   );
 };

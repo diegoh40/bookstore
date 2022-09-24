@@ -1,39 +1,143 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  background-color: #fff;
+  color: rgb(88, 119, 255);
+  font-family: Monserrate, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+  display: flex;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 90%;
+  margin-bottom: 1%;
+  align-items: center;
+}
+
+.navBar,
+li,
+a {
+  color: #b2b2b2;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  margin-left: 5%;
+  font-size: 20px;
+}
+
+.cont {
+  margin: 5%;
+}
+
+.countUI {
   display: flex;
   flex-direction: column;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list li {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  border: 1px solid #e8e8e8;
+  margin: 1% 0 1% 0;
 }
 
-.App-link {
-  color: #61dafb;
+.info {
+  width: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.imagen {
+  display: flex;
+  align-content: center;
+  width: 25%;
+  align-items: center;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.imagen img {
+  width: 80px;
+  height: auto;
+}
+
+.dta {
+  display: flex;
+  align-content: center;
+  width: 25%;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+form button {
+  color: #e8e8e8;
+  width: 20%;
+  height: 30px;
+  background-color: rgb(88, 119, 255);
+  border-style: hidden;
+  border-radius: 3px;
+  margin-left: 10%;
+}
+
+form h3 {
+  color: #7a7a7a;
+  margin: 2% 0 2% 0;
+}
+
+form input {
+  width: 20%;
+  height: 30px;
+}
+
+.dta button {
+  color: #e8e8e8;
+  width: 50%;
+  height: 30px;
+  background-color: rgb(88, 119, 255);
+  border-style: hidden;
+  border-radius: 3px;
+  margin-top: 4%;
+}
+
+.info button {
+  color: rgb(88, 119, 255);
+  border-style: hidden;
+  margin-right: 3%;
+}
+
+.info h4 {
+  color: black;
+}
+
+.info h6 {
+  color: rgb(119, 126, 147);
+}
+
+.imagen p {
+  color: rgba(34, 34, 34, 0.913);
+  font-size: 15px;
+}
+
+.dta p {
+  color: rgba(34, 34, 34, 0.913);
+  font-size: 15px;
 }
