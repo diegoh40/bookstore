@@ -12,7 +12,7 @@ const AddBook = () => {
 
   return (
     <form className="form-container">
-      <h1>ADD NEW BOOK</h1>
+      <h3>ADD NEW BOOK</h3>
       <input
         type="text"
         className="input-text"
@@ -56,7 +56,7 @@ const AddBook = () => {
           setCategory('');
         }}
       >
-        Submit
+        ADD BOOK
 
       </button>
     </form>
