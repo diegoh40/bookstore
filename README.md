@@ -18,17 +18,17 @@ By building this application, you will learn how to use React and Redux.
 ## Live Demo (if available)
 [Live Demo Link]()
 
-## Getting Started
+## Getting Started.
 
 To get a local copy up and running it, follow these simple steps.
 
-### Prerequisites
+### Prerequisites.
 
 - Internet Service.
 - Basic Knowledge about Git and Github.
 - VSCode.
 
-### Setup
+### Setup.
 
 1. Create an empty folder in your computer to store the clone.
 
@@ -40,13 +40,13 @@ To get a local copy up and running it, follow these simple steps.
 
 4. Create a new branch for working and make changes to adapt it according to your requirements.
 
-### Install
+### Install.
 
 - To install linters please open the ***.github/workflows*** then get into ***linters.yml*** and check the instructions and commands.
 - To install the libraries, please use the cmd: 
 > npm install
 
-### Usage
+### Usage.
 
 For educational purpose only, use it as a guideline.
 
@@ -67,7 +67,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
 ## Acknowledgments
 
 - Hat tip to anyone whose code was used
